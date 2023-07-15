@@ -1,0 +1,168 @@
+/*theme*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap');
+:root {
+    --btn-color :#277e6f;
+    --second-color:#2d6996;
+}
+body {
+   
+    font-family: 'poppins';
+}
+
+/*theme*/
+
+
+/*form*/
+.register-form {
+    border-radius: 20px;
+}
+
+.register-form-inactive {
+    display: none;
+}
+.register-form-active{
+    display: block ;
+}
+/*form*/
+
+/*password and confirm password*/
+.pass {
+    width: 48%;
+    display: inline-block;
+}
+/*password and confirm password*/
+
+/*process*/
+.steps {
+    margin-block: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    counter-reset: step; /*create a count value variable named step*/
+
+}
+
+.steps::before, .step-transform {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: lightgray;
+}
+
+#step-transform {
+    background-color: var(--btn-color);
+    width: 0%;
+}
+
+.step {
+    z-index: 2;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step::before {
+    counter-increment: step; /*increasing the value of step variable*/ /*the first value is 0*/
+    content: counter(step); /*passing the value of variable step into content of the .step*/
+}
+
+.step-active {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+	--tw-gradient-from: #71d16c;
+	--tw-gradient-to: rgba(113, 209, 108, 0);
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+	--tw-gradient-to: #27d38e;
+	--tw-text-opacity: 1;
+    color: white;
+}
+/*process*/
+
+
+/*button*/
+.button-groups {
+    display: flex;
+    justify-content: space-between;
+}
+.button-groups button{
+    border: none;
+    font-weight: 600;
+    width: 48%;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+	--tw-gradient-from: #71d16c;
+	--tw-gradient-to: rgba(113, 209, 108, 0);
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+	--tw-gradient-to: #27d38e;
+	--tw-text-opacity: 1;
+    color: #ffffff;
+
+}
+
+.button-groups button:hover {
+    color: var(--btn-color);
+}
+
+
+
+
+/*button*/
+
+.logo-img {
+    display: none;
+}
+
+.required-alert {
+    color: rgb(188, 4, 4);
+    font-size: 0.9em;
+    visibility: hidden;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 450px) {
+ * {
+    box-sizing: border-box;
+}
+
+ html, body{
+    padding: 0em !important;
+
+ }
+
+  .register-form {
+    margin-left: 0;
+    width: 70vw;
+    padding: 13px;
+    font-size: 1em;
+  }
+
+  input {
+    font-size: 0.9em;
+  }
+.logo-img {
+    display: block;
+}
+
+.button-groups {
+    display: block;
+}
+
+  .button-groups button{
+    margin-block: 3px;
+    font-size: 0.9em;
+    width: 100%;
+  }
+
+  .step { 
+    width: 2em;
+    height: 2em;
+  }
+}
+
+
